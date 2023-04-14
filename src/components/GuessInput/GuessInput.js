@@ -1,11 +1,10 @@
 import React from 'react';
 
-function GuessInput({ handleGuess }) {
+function GuessInput({ handleGuess, gameOver }) {
   const [inputValue, setInputValue] = React.useState('');
   const handleSubmit = (event) => {
     event.preventDefault();
     if (inputValue === '') return;
-    console.log({ string: inputValue });
     handleGuess(inputValue);
     setInputValue('');
   };
@@ -19,6 +18,7 @@ function GuessInput({ handleGuess }) {
         pattern="[a-zA-Z]{5,}"
         maxLength={5}
         id="guess-input"
+        disabled={gameOver}
         onChange={(event) => {
           const nextInputValue = event.target.value;
           setInputValue(nextInputValue);
