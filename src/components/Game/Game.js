@@ -8,6 +8,7 @@ import Toast from '../Toast';
 import Keyboard from '../Keyboard';
 
 // Pick a random word on every pageload.
+// TODO: put this in a state and reset the state instead of just reload the entire page.
 const answer = sample(WORDS);
 
 function Game() {
