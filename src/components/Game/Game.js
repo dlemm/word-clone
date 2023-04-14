@@ -2,10 +2,10 @@ import React from 'react';
 import { sample } from '../../utils';
 import { WORDS } from '../../data';
 import { NUM_OF_GUESSES_ALLOWED } from '../../constants';
-import GuessInput from '../GuessInput/GuessInput';
-import GuessResult from '../GuessResult/GuessResult';
-import Toast from '../Toast/Toast';
-import Keyboard from '../Keyboard/Keyboard';
+import GuessInput from '../GuessInput';
+import GuessResult from '../GuessResult';
+import Toast from '../Toast';
+import Keyboard from '../Keyboard';
 
 // Pick a random word on every pageload.
 const answer = sample(WORDS);
