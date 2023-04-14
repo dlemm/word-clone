@@ -5,6 +5,7 @@ import { NUM_OF_GUESSES_ALLOWED } from '../../constants';
 import GuessInput from '../GuessInput/GuessInput';
 import GuessResult from '../GuessResult/GuessResult';
 import Toast from '../Toast/Toast';
+import Keyboard from '../Keyboard/Keyboard';
 
 // Pick a random word on every pageload.
 const answer = sample(WORDS);
@@ -31,6 +32,7 @@ function Game() {
     <>
       <GuessResult guesses={guesses} answer={answer} />
       <GuessInput handleGuess={handleGuess} gameOver={gameOver}/>
+      <Keyboard guesses={guesses} answer={answer} />
       {gameOver && (
         <Toast variant={isCorrect} answer={answer} guesses={guesses.length} />
       )}

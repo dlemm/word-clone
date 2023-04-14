@@ -1,4 +1,5 @@
 import React from 'react';
+import Replay from '../Replay/Replay';
 
 function Toast({ variant, guesses, answer }) {
   return (
@@ -12,22 +13,14 @@ function Toast({ variant, guesses, answer }) {
               {guesses} {guesses > 1 ? 'guesses' : 'guess'}
             </strong>
           </p>
-          <form>
-            <button type="submit" className="retry">
-              Play again
-            </button>
-          </form>
+          <Replay />
         </div>
       ) : (
         <div className="sad banner">
           <p>
             Sorry, the correct answer is <strong>{answer}</strong>.
           </p>
-          <form>
-            <button type="submit" className="retry">
-              Play again
-            </button>
-          </form>
+          <Replay />
         </div>
       )}
     </>
