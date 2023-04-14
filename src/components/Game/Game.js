@@ -10,21 +10,20 @@ import Keyboard from '../Keyboard';
 // Pick a random word on every pageload.
 // TODO: put this in a state and reset the state instead of just reload the entire page.
 const answer = sample(WORDS);
-
 function Game() {
   const [guesses, setGuesses] = React.useState([]);
   const [gameOver, setGameOver] = React.useState(false);
   const [isCorrect, setIsCorrect] = React.useState(false);
   const handleGuess = (guess) => {
-    const nextGuess = guess.toUpperCase();
-    setGuesses([...guesses, { id: Math.random(), string: nextGuess }]);
-    if(nextGuess === answer) {
+    const nextGuess = [...guesses, { id: Math.random(), string: guess }];
+    setGuesses(nextGuess);
+    if(guess === answer) {
       setIsCorrect(true);
       setGameOver(true);
     }
 
-    if (guesses.length === (NUM_OF_GUESSES_ALLOWED - 1)) {
-      setGameOver(true)
+    if (nextGuess.length >= NUM_OF_GUESSES_ALLOWED) {
+      setGameOver(true);
     };
     
   };
